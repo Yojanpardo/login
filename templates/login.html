@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block page_title %}login con django{% endblock %}
+{% block content %}
+	<h1>Login con django</h1>
+	<form method="post" action="">
+		{% csrf_token %}
+		<input type="hidden" name="action" value="login">
+		<input type="text" name="username">
+		<input type="password" name="password">
+		<input type="submit" name="login">
+	</form>
+	<h1>sing up con django</h1>
+	<form method="post" action="">
+		{% csrf_token %}
+		<input type="hidden" name="action" value="signup">
+		<input type="text" name="username">
+		<input type="password" name="password">
+		<input type="submit" name="signup">
+	</form>
+{% endblock %}
