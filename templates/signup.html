@@ -1,14 +1,14 @@
 {% extends "base.html" %}
 {% block page_title %}login con django{% endblock %}
 {% block content %}
-	<h1>Login con django</h1>
+	<h1>sign up con django</h1>
 	<form method="post" action="">
 		{% csrf_token %}
-		<input type="hidden" name="action" value="login">
+		<input type="hidden" name="action" value="signup">
 		<input type="text" name="username">
 		<input type="password" name="password">
-		<input type="submit" name="login">
+		<input type="submit" name="signup">
 	</form>
 	<br>
-	<span>aun no tienes cuenta? <a href="/signup">registrate aquí</a></span>
+	<span>Ya tienes una cuenta? <a href="/login">Inicia sesión aquí</a></span>
 {% endblock %}

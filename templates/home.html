@@ -1,5 +1,10 @@
 {% extends "base.html" %}
 {% block page_title %}nuestro login{% endblock %}
 {% block content %}
-	<p>ya hace login</p>
+	{% if user.is_authenticated %}
+		<h1>Welcome back {{ user.username }}</h1>
+		<a href="{% url "users:logout"  %}">logout</a>
+	{% else %}
+		<p>inicia sesión <a href="{% url "users:login" %}">aquí</a></p>
+	{% endif %}
 {% endblock %}
